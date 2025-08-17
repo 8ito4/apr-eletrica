@@ -1,0 +1,1286 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#130F76">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>Análise Preliminar de Risco - APR</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="risk-tables.css">
+    <link rel="stylesheet" href="table-alignment.css">
+    <link rel="stylesheet" href="mobile-pwa.css">
+</head>
+<body>
+    <header>
+        <div class="nav-left">
+            <button id="menu-toggle" class="menu-btn">&#9776;</button>
+        </div>
+        <div class="header-title">
+            CLIMB SERVICES
+        </div>
+        <div class="nav-buttons">
+            <button id="prev-btn">&#9665;</button>
+            <span id="page-indicator">1/4</span>
+            <button id="next-btn">&#9655;</button>
+        </div>
+    </header>
+    
+    <aside id="sidebar" class="sidebar">
+        <button id="close-menu" class="close-menu">&#x25C0;</button>
+        <nav>
+            <ul>
+                <li><a href="#section1">Documento</a></li>
+                <li><a href="#section3">Edição do Documento</a></li>
+                <li><a href="#section4">Revisões</a></li>
+                <li><a href="#section5">Aprovação</a></li>
+            </ul>
+        </nav>
+    </aside>
+    
+    <main>
+        <section id="section1">
+            <table class="header-table no-count">
+                <tr>
+                   <td class="first-row" rowspan="2">
+                       <svg id="company-logo" class="logo" width="200" height="140" viewBox="0 0 200 140">
+                           <g transform="rotate(-10, 100, 70)">
+                               <ellipse id="main-ellipse" cx="100" cy="70" rx="75" ry="50" fill="#0D0D7E"/>
+                               <text x="100" y="75" text-anchor="middle" fill="#FFCE0C" font-family="'Bahnschrift Condensed', Arial, sans-serif" font-size="30" font-weight="bold">CLIMB</text>
+                           </g>
+                       </svg>
+                   </td>
+                    <td class="first-row" colspan="3">Análise Preliminar de Risco - APR</td>
+                </tr>
+                <tr>
+                    <td class="fill-height">Doc. Gerencial</td>
+                    <td class="fill-height">GSI:</td>
+                    <td class="fill-height">
+                        <input type="text" placeholder="Fale ou digite" id="documento" class="editable-field" value="RG-SMS-006">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fill-height">Cliente:</td>
+                    <td>
+                        <input type="text" placeholder="Fale ou digite" id="usuario" class="editable-field">
+                    </td>
+                    <td class="fill-height">Data:</td>
+                    <td class="fill-height" id="current-date"></td>
+                </tr>
+                <tr>
+                    <td class="fill-height">Rastreio:</td>
+                    <td id="tracking-code"></td>
+                    <td class="fill-height">Dia/semana:</td>
+                    <td class="fill-height" id="weekday"></td>
+                </tr>
+                <tr>
+                    <td class="fill-height">Usuário:</td>
+                    <td>
+                        <input type="text" placeholder="Fale ou digite" id="cliente" class="editable-field">
+                    </td>
+                    <td class="fill-height">Hora:</td>
+                    <td class="fill-height" id="current-time"></td>
+                </tr>
+            </table>
+            
+                   <h2 class="identificacao-title">Identificação</h2>
+                <div class="form-group">
+                    <div class="input-label">Medição:</div>
+                    <input type="text" class="input-field" id="medicao" placeholder="Digite">
+                </div>
+                
+                <div class="form-group">
+                    <div class="input-label">Local/site:</div>
+                    <input type="text" class="input-field" id="local" placeholder="Digite">
+                </div>
+                
+                <div class="form-group">
+                    <div class="input-label">Equipe:</div>
+                    <textarea class="input-field input-field-equipe" id="equipe" placeholder="Digite"></textarea>
+                </div>
+                
+             <div class="table-title">APR sobre eletricidade fotovoltaica</div>
+            
+            <!-- Etapa 1 -->
+            <table class="flex-table" id="epi-table-1">
+                <tr class="first-row">
+                    <td colspan="5" class="merged table-title" id="table-title-1">Etapa 1: Planejamento da atividade.</td>
+                    <td colspan="2">
+                        <input type="checkbox" id="se-aplica-1" onclick="handleCheckbox(this, '1')">
+                        <label for="se-aplica-1">Se aplica</label>
+                        <input type="checkbox" id="nao-se-aplica-1" onclick="handleCheckbox(this, '1')">
+                        <label for="nao-se-aplica-1">Não se aplica</label>
+                    </td>
+                </tr>
+                <tr class="second-row">
+                    <td colspan="2" class="merged">Risco</td>
+                    <td>P</td>
+                    <td>S</td>
+                    <td>R</td>
+                    <td colspan="2" class="merged">Medidas preventivas</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Acidente pessoal com possibilidade de posicionamento inseguro.</td>
+                    <td contenteditable="true">A</td>
+                    <td contenteditable="true">I</td>
+                    <td contenteditable="true" class="green-bg">1</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Nesta etapa da atividade o líder da equipe deverá orientar os profissionais a fazerem o uso correto e constante dos EPI's adequados à atividade que vão desenvolver;<br>
+• É obrigação da gerência, fazer avaliação dos conhecimentos e experiências dos profissionais nos serviços a serem submetidos (Qualificação profissional e treinamentos de NR 10 básica e suplementar);<br>
+• Todos os profissionais devem ser treinados e qualificados a executar suas tarefas com segurança;<br>
+• Todos os profissionais deverão receber treinamento do uso correto dos EPI's e sua importância;<br>
+• Certificar-se de que todos os profissionais envolvidos nas tarefas, estejam perfeitamente bem de saúde física e psicológica;<br>
+• Certificar-se de que os profissionais estejam cumprindo com as normas de segurança e que estejam atualizados sobre quaisquer modificações na execução da tarefa;<br>
+• Antes de iniciar os trabalhos, o líder da equipe deverá reunir os profissionais no local, para inspecionar, avaliar e controlar os riscos existentes e acompanhar a tarefa que vai ser executada;<br>
+• Quando da comprovação de incidência de intempéries, o líder da equipe deverá orientar os profissionais a permanecerem no interior de edificações.</td>
+                </tr>
+                <tr id="epi-recomendado-1">
+                    <td colspan="7" class="merged" contenteditable="true">EPI recomendado: Luva multitato, bota de segurança, vestimenta de brim, protetor solar.</td>
+                </tr>
+            </table>
+
+            <!-- Etapa 2 -->
+            <table class="flex-table" id="epi-table-2">
+                <tr class="first-row">
+                    <td colspan="5" class="merged table-title" id="table-title-2">Etapa 2: Preparação da equipe.</td>
+                    <td colspan="2">
+                        <input type="checkbox" id="se-aplica-2" onclick="handleCheckbox(this, '2')">
+                        <label for="se-aplica-2">Se aplica</label>
+                        <input type="checkbox" id="nao-se-aplica-2" onclick="handleCheckbox(this, '2')">
+                        <label for="nao-se-aplica-2">Não se aplica</label>
+                    </td>
+                </tr>
+                <tr class="second-row">
+                    <td colspan="2" class="merged">Risco</td>
+                    <td>P</td>
+                    <td>S</td>
+                    <td>R</td>
+                    <td colspan="2" class="merged">Medidas preventivas</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Acidente pessoal com possibilidade de corte (mãos e dedos), batidas contra (peças, equipamentos), posicionamento inseguro.</td>
+                    <td contenteditable="true">A</td>
+                    <td contenteditable="true">I</td>
+                    <td contenteditable="true" class="blue-bg">2</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Antes de iniciar as atividades, o líder da equipe deverá apresentar esta APR informando a todos os colaboradores sobre os riscos da área, da atividade e as medidas preventivas a serem tomadas;<br>
+• Manter condições de iluminação adequada;<br>
+• Inspecionar e sinalizar o local de trabalho quanto a possíveis obstruções, superfícies aquecidas, piso escorregadio, piso com diferença de nível, teto baixo, partes pontiagudas, local limitado de acesso e outros fatores que possam comprometer a movimentação dos executantes na atividade;<br>
+• Os executantes devem se atentarem para a postura adequada durante a realização das atividades;<br>
+• Verificar condições do tempo.</td>
+                </tr>
+                <tr id="epi-recomendado-2">
+                    <td colspan="7" class="merged" contenteditable="true">EPI recomendado: Capacete, óculos de segurança, vestimenta de brim, luvas de vaqueta, perneiras, bota de segurança e protetor solar.</td>
+                </tr>
+            </table>
+
+            <!-- Etapa 3 -->
+            <table class="flex-table" id="epi-table-3">
+                <tr class="first-row">
+                    <td colspan="5" class="merged table-title" id="table-title-3">Etapa 3: Processo de carga e descarga dos equipamentos do veículo de transporte.</td>
+                    <td colspan="2">
+                        <input type="checkbox" id="se-aplica-3" onclick="handleCheckbox(this, '3')">
+                        <label for="se-aplica-3">Se aplica</label>
+                        <input type="checkbox" id="nao-se-aplica-3" onclick="handleCheckbox(this, '3')">
+                        <label for="nao-se-aplica-3">Não se aplica</label>
+                    </td>
+                </tr>
+                <tr class="second-row">
+                    <td colspan="2" class="merged">Risco</td>
+                    <td>P</td>
+                    <td>S</td>
+                    <td>R</td>
+                    <td colspan="2" class="merged">Medidas preventivas</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Lesões musculares por ergonomia inadequada, podendo causar dores e problemas posturais.</td>
+                    <td contenteditable="true">B</td>
+                    <td contenteditable="true">I</td>
+                    <td contenteditable="true" class="blue-bg">2</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Utilizar os EPl's adequados para desenvolver o trabalho com segurança;<br>
+• Informações básicas sobre ergonomia e postura de trabalho;<br>
+• Pausa para descanso.</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Lesões por incidência solar excessiva, podendo causar queimaduras.</td>
+                    <td contenteditable="true">A</td>
+                    <td contenteditable="true">I</td>
+                    <td contenteditable="true" class="green-bg">1</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Utilizar os EPI's adequados para desenvolver o trabalho com segurança;<br>
+• Aplicar protetor solar;<br>
+• Pausa para descanso;<br>
+• Recomenda-se hidratação a cada 30 minutos.</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Queda por falta de atenção, desníveis, excesso de carga e manuseio incorreto, podendo causar lesões e ferimentos.</td>
+                    <td contenteditable="true">B</td>
+                    <td contenteditable="true">II</td>
+                    <td contenteditable="true" class="yellow-bg">3</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Realizar a verificação prévia do trajeto a ser percorrido e do local que será depositada a carga transportada;<br>
+• Utilizar os EPl's adequados para desenvolver o trabalho com segurança;<br>
+• Utilizar equipamentos que favoreçam o deslocamento e movimentação das cargas. (ex.:carrinhos de carga, carinho de mão etc.);<br>
+• Evitar pisos escorregadios, superfícies instáveis e equipamentos impróprios para a realização da atividade;<br>
+• O colaborador não deverá realizar transporte manual de carga com peso que possa comprometer a sua saúde ou segurança.</td>
+                </tr>
+                <tr id="epi-recomendado-3">
+                    <td colspan="7" class="merged" contenteditable="true">EPI recomendado: Capacete, óculos de segurança, vestimenta de brim, luvas de vaqueta, perneiras, bota de segurança e protetor solar.</td>
+                </tr>
+            </table>
+
+            <!-- Etapa 4 -->
+            <table class="flex-table" id="epi-table-4">
+                <tr class="first-row">
+                    <td colspan="5" class="merged table-title" id="table-title-4">Etapa 4: Fixação e/ou manutenção das estruturas de suporte dos módulos fotovoltaicos.</td>
+                    <td colspan="2">
+                        <input type="checkbox" id="se-aplica-4" onclick="handleCheckbox(this, '4')">
+                        <label for="se-aplica-4">Se aplica</label>
+                        <input type="checkbox" id="nao-se-aplica-4" onclick="handleCheckbox(this, '4')">
+                        <label for="nao-se-aplica-4">Não se aplica</label>
+                    </td>
+                </tr>
+                <tr class="second-row">
+                    <td colspan="2" class="merged">Risco</td>
+                    <td>P</td>
+                    <td>S</td>
+                    <td>R</td>
+                    <td colspan="2" class="merged">Medidas preventivas</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Ataque de animais peçonhentos (serpente e aranha), podendo causar lesões fisiopatológicas.</td>
+                    <td contenteditable="true">B</td>
+                    <td contenteditable="true">III</td>
+                    <td contenteditable="true" class="orange-bg">4</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Fazer análise de riscos local;<br>
+• Manter conservação periódica do local (poda/corte da vegetação);<br>
+• Não tocar/remover animal com a mão (utilizar bastão e EPI para verificar local);<br>
+• No caso de presença de animais peçonhentos acionar o serviço do Corpo de Bombeiro;<br>
+• Utilização dos EPI's obrigatórios.</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Intempéries</td>
+                    <td contenteditable="true">B</td>
+                    <td contenteditable="true">II</td>
+                    <td contenteditable="true" class="blue-bg">2</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Não realizar a atividade quando o clima se apresentar instável, com geração de raios;<br>
+• Não realizar a atividade quando houver chuva.</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Lesões musculares por ergonomia inadequada, podendo causar dores e problemas posturais.</td>
+                    <td contenteditable="true">B</td>
+                    <td contenteditable="true">I</td>
+                    <td contenteditable="true" class="blue-bg">2</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Utilizar os EPI's adequados para desenvolver o trabalho com segurança;<br>
+• Informações básicas sobre ergonomia e postura de trabalho;<br>
+• Pausa para descanso.</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Lesões por incidência solar excessiva, podendo causar queimaduras.</td>
+                    <td contenteditable="true">A</td>
+                    <td contenteditable="true">I</td>
+                    <td contenteditable="true" class="green-bg">1</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Utilizar os EPI's adequados para desenvolver o trabalho com segurança;<br>
+• Aplicação de protetor solar;<br>
+• Pausa para descanso;<br>
+• Recomenda-se hidratação a cada 30 minutos.</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Queda por diferença de nível, podendo causar lesões e ferimentos.</td>
+                    <td contenteditable="true">B</td>
+                    <td contenteditable="true">II</td>
+                    <td contenteditable="true" class="yellow-bg">3</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Durante o trabalho em taludes que alcançam até 1,20 metros de altura, deve se providenciar linha de vida para a atividade;<br>
+• Poderá utilizar os postes de iluminação para laceamento de corda e içamento de cinto de segurança, no entanto sugere-se a criação de pontos de ancoragem fixos conforme determina a NR35;<br>
+• Não utilizar veículo móvel como ponto de ancoragem;<br>
+• Seguir os procedimentos internos da CLIMB SERVICES para trabalhos em altura, utilizando os EPIs cinto paraquedista, talabarte e trava-queda.</td>
+                </tr>
+                <tr>
+
+                    <td colspan="2" contenteditable="true">Acidentes com equipamentos manuais e elétricos, podendo causar cortes/ perfurações, choques elétricos e queimaduras.</td>
+                    <td contenteditable="true">B</td>
+                    <td contenteditable="true">I</td>
+                    <td contenteditable="true" class="green-bg">1</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Utilizar os EPI's e EPC's adequados para desenvolver o trabalho com segurança;<br>
+• Realizar conferência dos equipamentos utilizados, referente a manutenção e estado de conservação;<br>
+• Não fazer adaptações em máquinas e equipamentos utilizados;<br>
+• Máquinas e equipamentos só devem ser operados por pessoas qualificadas;<br>
+• Manter atenção ao trabalho realizado.</td>
+                </tr>
+                <tr id="epi-recomendado-4">
+                    <td colspan="7" class="merged" contenteditable="true">EPI recomendado: Capacete, óculos de segurança, vestimenta de brim, luvas de vaqueta, perneiras, bota de segurança e protetor solar.</td>
+                </tr>
+            </table>
+
+            <!-- Etapa 5 -->
+            <table class="flex-table" id="epi-table-5">
+                <tr class="first-row">
+                    <td colspan="5" class="merged table-title" id="table-title-5">Etapa 5: Conexão elétrica entre os módulos fotovoltaicos. Instalação e/ou manutenção.</td>
+                    <td colspan="2">
+                        <input type="checkbox" id="se-aplica-5" onclick="handleCheckbox(this, '5')">
+                        <label for="se-aplica-5">Se aplica</label>
+                        <input type="checkbox" id="nao-se-aplica-5" onclick="handleCheckbox(this, '5')">
+                        <label for="nao-se-aplica-5">Não se aplica</label>
+                    </td>
+                </tr>
+                <tr class="second-row">
+                    <td colspan="2" class="merged">Risco</td>
+                    <td>P</td>
+                    <td>S</td>
+                    <td>R</td>
+                    <td colspan="2" class="merged">Medidas preventivas</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Lesões por incidência solar excessiva, podendo causar queimaduras.</td>
+                    <td contenteditable="true">A</td>
+                    <td contenteditable="true">I</td>
+                    <td contenteditable="true" class="green-bg">1</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Utilizar os EPI's adequados para desenvolver o trabalho com segurança;<br>
+• Aplicar protetor solar;<br>
+• Pausa para descanso;<br>
+• Recomenda-se hidratação a cada 30 minutos.</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Lesões musculares por ergonomia inadequada, podendo causar dores e problemas posturais.</td>
+                    <td contenteditable="true">B</td>
+                    <td contenteditable="true">I</td>
+                    <td contenteditable="true" class="blue-bg">2</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Utilizar os EPl's adequados para desenvolver o trabalho com segurança;<br>
+• Informações básicas sobre ergonomia e postura de trabalho;<br>
+• Pausa para descanso.</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Choque elétrico por falta de treinamento, falta de atenção ou equipamento defeituosos, podendo causar queimadura.</td>
+                    <td contenteditable="true">B</td>
+                    <td contenteditable="true">I</td>
+                    <td contenteditable="true" class="green-bg">1</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Utilizar os EPI's e EPC's adequados para desenvolver o trabalho com segurança;<br>
+• Realizar conferência dos equipamentos utilizados, referente a manutenção e estado de conservação;<br>
+• Não fazer adaptações e somente utilizar equipamentos e componentes previstos no projeto;<br>
+• Manter atenção ao trabalho realizado.</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Intempéries</td>
+                    <td contenteditable="true">B</td>
+                    <td contenteditable="true">II</td>
+                    <td contenteditable="true" class="blue-bg">2</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Não realizar a atividade quando o clima se apresentar instável, com geração de raios;<br>
+• Não realizar a atividade quando houver chuva.</td>
+                </tr>
+                <tr id="epi-recomendado-5">
+                    <td colspan="7" class="merged" contenteditable="true">EPI recomendado: Capacete, protetor auditivo, óculos de segurança, vestimenta de brim RF, luvas isoladas, perneiras, bota de segurança e protetor solar. EPC's: Cone de sinalização e fita zebrada.</td>
+                </tr>
+            </table>
+
+            <!-- Etapa 6 -->
+            <table class="flex-table" id="epi-table-6">
+                <tr class="first-row">
+                    <td colspan="5" class="merged table-title" id="table-title-6">Etapa 6: Fixação das estruturas para cabeamento elétrico – em altura inferior à 2 metros.</td>
+                    <td colspan="2">
+                        <input type="checkbox" id="se-aplica-6" onclick="handleCheckbox(this, '6')">
+                        <label for="se-aplica-6">Se aplica</label>
+                        <input type="checkbox" id="nao-se-aplica-6" onclick="handleCheckbox(this, '6')">
+                        <label for="nao-se-aplica-6">Não se aplica</label>
+                    </td>
+                </tr>
+                <tr class="second-row">
+                    <td colspan="2" class="merged">Risco</td>
+                    <td>P</td>
+                    <td>S</td>
+                    <td>R</td>
+                    <td colspan="2" class="merged">Medidas preventivas</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Ataque de animais peçonhentos (serpente e aranha), podendo causar lesões fisiopatológicas.</td>
+                    <td contenteditable="true">B</td>
+                    <td contenteditable="true">III</td>
+                    <td contenteditable="true" class="orange-bg">4</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Fazer análise de riscos local;<br>
+• Manter conservação periódica do local (poda/corte da vegetação);<br>
+• Não tocar/remover animal com a mão (utilizar bastão e EPI para verificar local);<br>
+• No caso de presença de animais peçonhentos acionar o serviço do Corpo de Bombeiro (193);<br>
+• Utilização dos EPI's obrigatórios.</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Lesões musculares por ergonomia inadequada, podendo causar dores e problemas posturais.</td>
+                    <td contenteditable="true">B</td>
+                    <td contenteditable="true">I</td>
+                    <td contenteditable="true" class="blue-bg">2</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Utilizar os EPI's adequados para desenvolver o trabalho com segurança;<br>
+• Informações básicas sobre ergonomia e postura de trabalho;<br>
+• Pausa para descanso.</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Lesões por incidência solar excessiva, podendo causar queimaduras.</td>
+                    <td contenteditable="true">A</td>
+                    <td contenteditable="true">I</td>
+                    <td contenteditable="true" class="yellow-bg">1</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Utilizar os EPI's adequados para desenvolver o trabalho com segurança;<br>
+• Aplicar protetor solar;<br>
+• Pausa para descanso;<br>
+• Recomenda-se hidratação a cada 30 minutos.</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Queda por diferença de nível, podendo causar lesões e ferimentos.</td>
+                    <td contenteditable="true">B</td>
+                    <td contenteditable="true">III</td>
+                    <td contenteditable="true" class="green-bg">3</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Realizar a verificação prévia do trajeto a ser percorrido;<br>
+• Utilizar os EPI's adequados para desenvolver o trabalho com segurança;<br>
+• Evitar pisos escorregadios, superfícies instáveis e equipamentos impróprios para a realização da atividade;<br>
+• Manter atenção ao trabalho realizado.</td>
+                </tr>
+                <tr id="epi-recomendado-6">
+                    <td colspan="7" class="merged" contenteditable="true">EPI recomendado: Capacete, óculos de segurança, vestimenta de brim, luvas de vaqueta, perneiras, bota de segurança e protetor solar.</td>
+                </tr>
+            </table>
+
+            <!-- Etapa 7 -->
+            <table class="flex-table" id="epi-table-7">
+                <tr class="first-row">
+                    <td colspan="5" class="merged table-title" id="table-title-7">Etapa 7: Passagem do cabeamento elétrico desenergizado. Instalação e/ou manutenção.</td>
+                    <td colspan="2">
+                        <input type="checkbox" id="se-aplica-7" onclick="handleCheckbox(this, '7')">
+                        <label for="se-aplica-7">Se aplica</label>
+                        <input type="checkbox" id="nao-se-aplica-7" onclick="handleCheckbox(this, '7')">
+                        <label for="nao-se-aplica-7">Não se aplica</label>
+                    </td>
+                </tr>
+                <tr class="second-row">
+                    <td colspan="2" class="merged">Risco</td>
+                    <td>P</td>
+                    <td>S</td>
+                    <td>R</td>
+                    <td colspan="2" class="merged">Medidas preventivas</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Lesões por incidência solar excessiva, podendo causar queimaduras.</td>
+                    <td contenteditable="true">A</td>
+                    <td contenteditable="true">I</td>
+                    <td contenteditable="true" class="green-bg">1</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Utilizar os EPI's adequados para desenvolver o trabalho com segurança;<br>
+• Aplicar protetor solar;<br>
+• Pausa para descanso;<br>
+• Recomenda-se hidratação a cada 30 minutos.</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Lesões musculares por ergonomia inadequada, podendo causar dores e problemas posturais.</td>
+                    <td contenteditable="true">B</td>
+                    <td contenteditable="true">I</td>
+                    <td contenteditable="true" class="blue-bg">2</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Utilizar os EPI's adequados para desenvolver o trabalho com segurança;<br>
+• Informações básicas sobre ergonomia e postura de trabalho;<br>
+• Evitar esforços excessivos de tração manual, mantendo boa postura, com os pés devidamente espaçados.</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Ataque de animais peçonhentos (serpente e aranha), podendo causar lesões fisiopatológicas.</td>
+                    <td contenteditable="true">B</td>
+                    <td contenteditable="true">III</td>
+                    <td contenteditable="true" class="orange-bg">4</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Fazer análise de riscos local;<br>
+• Manter conservação periódica do local (poda/corte da vegetação);<br>
+• Não tocar/remover animal com a mão (utilizar bastão e EPI para verificar local);<br>
+• No caso de presença de animais peçonhentos acionar o serviço do Corpo de Bombeiro (193);<br>
+• Utilização dos EPI's obrigatórios.</td>
+                </tr>
+                <tr id="epi-recomendado-7">
+                    <td colspan="7" class="merged" contenteditable="true">EPI recomendado: Capacete, óculos de segurança, vestimenta de brim, luvas de vaqueta, perneiras, bota de segurança e protetor solar.</td>
+                </tr>
+            </table>
+
+            <!-- Etapa 8 -->
+            <table class="flex-table" id="epi-table-8">
+                <tr class="first-row">
+                    <td colspan="5" class="merged table-title" id="table-title-8">Etapa 8: Fixação do(s) inversor(es) solar(es) e proteções elétricas. Instalação e/ou manutenção.</td>
+                    <td colspan="2">
+                        <input type="checkbox" id="se-aplica-8" onclick="handleCheckbox(this, '8')">
+                        <label for="se-aplica-8">Se aplica</label>
+                        <input type="checkbox" id="nao-se-aplica-8" onclick="handleCheckbox(this, '8')">
+                        <label for="nao-se-aplica-8">Não se aplica</label>
+                    </td>
+                </tr>
+                <tr class="second-row">
+                    <td colspan="2" class="merged">Risco</td>
+                    <td>P</td>
+                    <td>S</td>
+                    <td>R</td>
+                    <td colspan="2" class="merged">Medidas preventivas</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Acidentes com equipamentos manuais e elétricos, podendo causar cortes/ perfurações, choques elétricos e queimaduras.</td>
+                    <td contenteditable="true">B</td>
+                    <td contenteditable="true">I</td>
+                    <td contenteditable="true" class="blue-bg">2</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Utilizar os EPI's e EPC's adequados para desenvolver o trabalho com segurança;<br>
+• Realizar conferência dos equipamentos utilizados, referente a manutenção e estado de conservação;<br>
+• Não fazer adaptações em máquinas e equipamentos utilizados;<br>
+• Ferramentas para fixação em bornes e terminais elétricos devem possuir isolamento de cabo e haste;<br>
+• Manter atenção ao trabalho realizado.</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Lesões musculares por ergonomia inadequada, podendo causar dores e problemas posturais.</td>
+                    <td contenteditable="true">B</td>
+                    <td contenteditable="true">I</td>
+                    <td contenteditable="true" class="blue-bg">2</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Utilizar os EPI's adequados para desenvolver o trabalho com segurança;<br>
+• Informações básicas sobre ergonomia e postura de trabalho;<br>
+• Evitar esforços excessivos de sustentação manual, mantendo postura adequada.</td>
+                </tr>
+                <tr id="epi-recomendado-8">
+                    <td colspan="7" class="merged" contenteditable="true">EPI recomendado: Capacete, óculos de segurança, vestimenta de brim, luvas de vaqueta, perneiras, bota de segurança e protetor solar.</td>
+                </tr>
+            </table>
+
+            <!-- Etapa 9 -->
+            <table class="flex-table" id="epi-table-9">
+                <tr class="first-row">
+                    <td colspan="5" class="merged table-title" id="table-title-9">Etapa 9: Conexão elétrica dos módulos fotovoltaicos com o inversor e proteções. Instalação e/ou manutenção.</td>
+                    <td colspan="2">
+                        <input type="checkbox" id="se-aplica-9" onclick="handleCheckbox(this, '9')">
+                        <label for="se-aplica-9">Se aplica</label>
+                        <input type="checkbox" id="nao-se-aplica-9" onclick="handleCheckbox(this, '9')">
+                        <label for="nao-se-aplica-9">Não se aplica</label>
+                    </td>
+                </tr>
+                <tr class="second-row">
+                    <td colspan="2" class="merged">Risco</td>
+                    <td>P</td>
+                    <td>S</td>
+                    <td>R</td>
+                    <td colspan="2" class="merged">Medidas preventivas</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Lesões por incidência solar excessiva, podendo causar queimaduras.</td>
+                    <td contenteditable="true">A</td>
+                    <td contenteditable="true">I</td>
+                    <td contenteditable="true" class="green-bg">1</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Utilizar os EPI's adequados para desenvolver o trabalho com segurança;<br>
+• Aplicar protetor solar;<br>
+• Pausa para descanso;<br>
+• Recomenda-se hidratação a cada 30 minutos.</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Choques elétricos por falta de treinamento ou equipamento defeituoso, podendo causar queimaduras.</td>
+                    <td contenteditable="true">B</td>
+                    <td contenteditable="true">II</td>
+                    <td contenteditable="true" class="yellow-bg">3</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Utilizar os EPI's e EPC's adequados para desenvolver o trabalho com segurança;<br>
+• Realizar conferência dos equipamentos utilizados, referente a manutenção e estado de conservação;<br>
+• Não fazer adaptações em máquinas e equipamentos utilizados;<br>
+• Ferramentas para fixação em bornes e terminais elétricos devem possuir isolamento de cabo e haste;<br>
+• Manter atenção ao trabalho realizado.</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Lesões musculares por ergonomia inadequada, podendo causar dores e problemas posturais.</td>
+                    <td contenteditable="true">B</td>
+                    <td contenteditable="true">I</td>
+                    <td contenteditable="true" class="blue-bg">2</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Utilizar os EPI's adequados para desenvolver o trabalho com segurança;<br>
+• Informações básicas sobre ergonomia e postura de trabalho;<br>
+• Evitar esforços excessivos de sustentação manual, mantendo postura adequada.</td>
+                </tr>
+                <tr id="epi-recomendado-9">
+                    <td colspan="7" class="merged" contenteditable="true">EPI recomendado: Capacete, protetor auditivo, óculos de segurança, vestimenta de brim RF, luvas isoladas, perneiras, bota de segurança e protetor solar. EPCs: Cone de sinalização e fita zebrada.</td>
+                </tr>
+            </table>
+
+            <!-- Etapa 10 -->
+            <table class="flex-table" id="epi-table-10">
+                <tr class="first-row">
+                    <td colspan="5" class="merged table-title" id="table-title-10">Etapa 10: Conexão elétrica do(s) inversor(es) e proteções com a rede elétrica. Instalação e/ou manutenção.</td>
+                    <td colspan="2">
+                        <input type="checkbox" id="se-aplica-10" onclick="handleCheckbox(this, '10')">
+                        <label for="se-aplica-10">Se aplica</label>
+                        <input type="checkbox" id="nao-se-aplica-10" onclick="handleCheckbox(this, '10')">
+                        <label for="nao-se-aplica-10">Não se aplica</label>
+                    </td>
+                </tr>
+                <tr class="second-row">
+                    <td colspan="2" class="merged">Risco</td>
+                    <td>P</td>
+                    <td>S</td>
+                    <td>R</td>
+                    <td colspan="2" class="merged">Medidas preventivas</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Lesões por incidência solar excessiva, podendo causar queimaduras.</td>
+                    <td contenteditable="true">A</td>
+                    <td contenteditable="true">I</td>
+                    <td contenteditable="true" class="green-bg">1</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Utilizar os EPI's adequados para desenvolver o trabalho com segurança;<br>
+• Aplicar protetor solar;<br>
+• Pausa para descanso;<br>
+• Recomenda-se hidratação a cada 30 minutos.</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Choques elétricos por falta de treinamento ou equipamento defeituoso, podendo causar queimaduras.</td>
+                    <td contenteditable="true">B</td>
+                    <td contenteditable="true">III</td>
+                    <td contenteditable="true" class="orange-bg">4</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Utilizar os EPI's e EPC's adequados para desenvolver o trabalho com segurança;<br>
+• Realizar conferência dos equipamentos utilizados, referente a manutenção e estado de conservação;<br>
+• Não fazer adaptações em máquinas e equipamentos utilizados;<br>
+• Ferramentas para fixação em bornes e terminais elétricos devem possuir isolamento de cabo e haste;<br>
+• Manter atenção ao trabalho realizado.</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Lesões musculares por ergonomia inadequada, podendo causar dores e problemas posturais.</td>
+                    <td contenteditable="true">B</td>
+                    <td contenteditable="true">I</td>
+                    <td contenteditable="true" class="blue-bg">2</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Utilizar os EPI's adequados para desenvolver o trabalho com segurança;<br>
+• Informações básicas sobre ergonomia e postura de trabalho;<br>
+• Evitar esforços excessivos de sustentação manual, mantendo postura adequada.</td>
+                </tr>
+                <tr id="epi-recomendado-10">
+                    <td colspan="7" class="merged" contenteditable="true">EPI recomendado: Capacete, protetor auditivo, óculos de segurança, vestimenta de brim RF, luvas isoladas, perneiras, bota de segurança e protetor solar. EPC's: Cone de sinalização e fita zebrada.</td>
+                </tr>
+            </table>
+
+            <!-- Etapa 11 -->
+            <table class="flex-table" id="epi-table-11">
+                <tr class="first-row">
+                    <td colspan="5" class="merged table-title" id="table-title-11">Etapa 11: Testes de continuidade, medições, isolamento (Megagem), integridade física de componentes elétricos e verificações similares.</td>
+                    <td colspan="2">
+                        <input type="checkbox" id="se-aplica-11" onclick="handleCheckbox(this, '11')">
+                        <label for="se-aplica-11">Se aplica</label>
+                        <input type="checkbox" id="nao-se-aplica-11" onclick="handleCheckbox(this, '11')">
+                        <label for="nao-se-aplica-11">Não se aplica</label>
+                    </td>
+                </tr>
+                <tr class="second-row">
+                    <td colspan="2" class="merged">Risco</td>
+                    <td>P</td>
+                    <td>S</td>
+                    <td>R</td>
+                    <td colspan="2" class="merged">Medidas preventivas</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Choques elétricos por falta de treinamento ou equipamento defeituoso, podendo causar queimaduras.</td>
+                    <td contenteditable="true">B</td>
+                    <td contenteditable="true">I</td>
+                    <td contenteditable="true" class="blue-bg">2</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Utilizar os EPI's adequados para desenvolver o trabalho com segurança;<br>
+• O(s) profissional(is) deve possuir qualificação e treinamento específico para o procedimento;<br>
+• Possuir informações técnicas sobre o procedimento que será realizado;<br>
+• Fazer verificação da temperatura ambiente e evitar realizar testes em locais com concentração de umidade;<br>
+• Ferramentas para fixação em bornes e terminais elétricos devem possuir isolamento de cabo e haste;<br>
+• Manter atenção ao trabalho realizado.</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Ataque de animais peçonhentos (serpente e aranha), podendo causar lesões fisiopatológicas.</td>
+                    <td contenteditable="true">B</td>
+                    <td contenteditable="true">III</td>
+                    <td contenteditable="true" class="orange-bg">4</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Utilizar os EPI's adequados para desenvolver o trabalho com segurança;<br>
+• Fazer análise de riscos local;<br>
+• Abrir quadros e caixas de passagens com atenção;<br>
+• Manter conservação periódica do local (poda/corte da vegetação);<br>
+• No caso de presença de animais peçonhentos acionar o serviço do Corpo de Bombeiro (193).</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Lesões por incidência solar excessiva, podendo causar queimaduras.</td>
+                    <td contenteditable="true">A</td>
+                    <td contenteditable="true">I</td>
+                    <td contenteditable="true" class="green-bg">1</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Utilizar os EPI's adequados para desenvolver o trabalho com segurança;<br>
+• Aplicar protetor solar;<br>
+• Pausa para descanso;<br>
+• Recomenda-se hidratação a cada 30 minutos.</td>
+                </tr>
+                <tr id="epi-recomendado-11">
+                    <td colspan="7" class="merged" contenteditable="true">EPI recomendado: Capacete, protetor auditivo, óculos de segurança, vestimenta de brim RF, luvas isoladas, perneiras, bota de segurança e protetor solar. EPC's: Cone de sinalização e fita zebrada.</td>
+                </tr>
+            </table>
+
+            <!-- Etapa 12 -->
+            <table class="flex-table" id="epi-table-12">
+                <tr class="first-row">
+                    <td colspan="5" class="merged table-title" id="table-title-12">Etapa 12: Limpeza e organização do local de trabalho.</td>
+                    <td colspan="2">
+                        <input type="checkbox" id="se-aplica-12" onclick="handleCheckbox(this, '12')">
+                        <label for="se-aplica-12">Se aplica</label>
+                        <input type="checkbox" id="nao-se-aplica-12" onclick="handleCheckbox(this, '12')">
+                        <label for="nao-se-aplica-12">Não se aplica</label>
+                    </td>
+                </tr>
+                <tr class="second-row">
+                    <td colspan="2" class="merged">Risco</td>
+                    <td>P</td>
+                    <td>S</td>
+                    <td>R</td>
+                    <td colspan="2" class="merged">Medidas preventivas</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Queda de objetos/materiais por falta de atenção ou posição inadequada, podendo causar lesões ou ferimentos.</td>
+                    <td contenteditable="true">A</td>
+                    <td contenteditable="true">I</td>
+                    <td contenteditable="true" class="green-bg">1</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Manter o local de trabalho limpo, organizado e sinalizado usando proteção;<br>
+• Utilizar os EPI's até finalizar toda a etapa de limpeza e organização;<br>
+• Cuidados no manuseio de materiais e equipamento;<br>
+• Se posicionar de maneira adequada para retirada de materiais e equipamentos;<br>
+• Evitar distrações para manter a segurança até finalizar a atividade.</td>
+                </tr>
+                <tr>
+                    <td colspan="2" contenteditable="true">Batida contra peças e estruturas por falta de atenção ou posição inadequada, podendo causar lesões ou ferimentos.</td>
+                    <td contenteditable="true">A</td>
+                    <td contenteditable="true">I</td>
+                    <td contenteditable="true" class="green-bg">1</td>
+                    <td colspan="2" class="merged justified-cell" contenteditable="true" style="text-align: justify;">
+• Manter o local de trabalho limpo, organizado e sinalizado usando proteção;
+• Utilizar os EPI's até finalizar toda a etapa de limpeza e organização;
+• Manter a atenção ao transitar entre as estruturas da Usina Fotovoltaica;
+• Manter a atenção em pisos irregulares e escorregadios;
+• Evitar distrações para manter a segurança até finalizar a atividade.</td>
+                </tr>
+                <tr id="epi-recomendado-12">
+                    <td colspan="7" class="merged" contenteditable="true">EPI recomendado: Capacete, protetor auditivo, óculos de segurança, vestimenta de brim RF, luvas isoladas, perneiras, bota de segurança e protetor solar. EPC's: Cone de sinalização e fita zebrada.</td>
+                </tr>
+            </table>
+                </div>
+                
+                <table id="risk-assessment-table" class="flex-table no-count">
+                    <tr>
+                        <th rowspan="2" class="risk-header">Avaliação de Risco</th>
+                        <th colspan="3" class="prob-sev-header">Probabilidade</th>
+                        <th colspan="3" class="prob-sev-header">Severidade</th>
+                        <th colspan="5" class="risk-grad-header">Graduação de Risco</th>
+                    </tr>
+                    <tr>
+                        <td class="risk-level">
+                            <div class="risk-category">
+                                <span class="top-text">BAIXA</span>
+                                <span class="bottom-text">(A)</span>
+                            </div>
+                        </td>
+                        <td class="risk-level">
+                            <div class="risk-category">
+                                <span class="top-text">MÉDIA</span>
+                                <span class="bottom-text">(B)</span>
+                            </div>
+                        </td>
+                        <td class="risk-level">
+                            <div class="risk-category">
+                                <span class="top-text">ALTA</span>
+                                <span class="bottom-text">(C)</span>
+                            </div>
+                        </td>
+                        <td class="risk-level">
+                            <div class="risk-category">
+                                <span class="top-text">BAIXA</span>
+                                <span class="bottom-text">(I)</span>
+                            </div>
+                        </td>
+                        <td class="risk-level">
+                            <div class="risk-category">
+                                <span class="top-text">MÉDIA</span>
+                                <span class="bottom-text">(II)</span>
+                            </div>
+                        </td>
+                        <td class="risk-level">
+                            <div class="risk-category">
+                                <span class="top-text">ALTA</span>
+                                <span class="bottom-text">(III)</span>
+                            </div>
+                        </td>
+                        <td class="green-bg risk-grade">
+                            <div class="risk-category">
+                                <span class="top-text">1 -</span>
+                                <span class="bottom-text">TRIVIAL</span>
+                            </div>
+                        </td>
+                        <td class="blue-bg risk-grade">
+                            <div class="risk-category">
+                                <span class="top-text">2 -</span>
+                                <span class="bottom-text">ACEITÁVEL</span>
+                            </div>
+                        </td>
+                        <td class="yellow-bg risk-grade">
+                            <div class="risk-category">
+                                <span class="top-text">3 -</span>
+                                <span class="bottom-text">MODERADO</span>
+                            </div>
+                        </td>
+                        <td class="orange-bg risk-grade">
+                            <div class="risk-category">
+                                <span class="top-text">4 -</span>
+                                <span class="bottom-text">SUBSTANCIAL</span>
+                            </div>
+                        </td>
+                        <td class="red-bg risk-grade">
+                            <div class="risk-category">
+                                <span class="top-text">5 -</span>
+                                <span class="bottom-text">INACEITÁVEL</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                
+                <div class="observations-container">
+                    <h2 class="identificacao-title">Observações</h2>
+                    <textarea class="input-field input-field-equipe" id="observacoes" placeholder="Digite"></textarea>
+                </div>
+                
+                <div class="approval-container">
+                    <h2 class="form-title">Declaro ciência dos riscos desta atividade e da minha responsabilidade em seguir as orientações deste documento.</h2>
+                    
+                    <div class="form-line">
+                        <div>
+                            <label class="form-label" for="executante1"><strong>Executante 1</strong></label>
+                            <textarea class="form-textbox left-align" id="executante1" placeholder="Digite" wrap="hard"></textarea>
+                        </div>
+                        <div>
+                            <label class="form-label" for="funcao1"><strong>Função</strong></label>
+                            <textarea class="form-textbox left-align" id="funcao1" placeholder="Digite" wrap="hard"></textarea>
+                        </div>
+                        <div class="signature-field" id="signature-trigger1">
+                            <img class="signature-preview" id="signature-preview1" src="" alt="Assinar">
+                        </div>
+                    </div>
+                    
+                    <div class="form-line">
+                        <div>
+                            <label class="form-label" for="executante2"><strong>Executante 2</strong></label>
+                            <textarea class="form-textbox left-align" id="executante2" placeholder="Digite" wrap="hard"></textarea>
+                        </div>
+                        <div>
+                            <label class="form-label" for="funcao2"><strong>Função</strong></label>
+                            <textarea class="form-textbox left-align" id="funcao2" placeholder="Digite" wrap="hard"></textarea>
+                        </div>
+                        <div class="signature-field" id="signature-trigger2">
+                            <img class="signature-preview" id="signature-preview2" src="" alt="Assinar">
+                        </div>
+                    </div>
+                    
+                    <div class="form-line">
+                        <div>
+                            <label class="form-label" for="executante3"><strong>Executante 3</strong></label>
+                            <textarea class="form-textbox left-align" id="executante3" placeholder="Digite" wrap="hard"></textarea>
+                        </div>
+                        <div>
+                            <label class="form-label" for="funcao3"><strong>Função</strong></label>
+                            <textarea class="form-textbox left-align" id="funcao3" placeholder="Digite" wrap="hard"></textarea>
+                        </div>
+                        <div class="signature-field" id="signature-trigger3">
+                            <img class="signature-preview" id="signature-preview3" src="" alt="Assinar">
+                        </div>
+                    </div>
+                    
+                    <div class="form-line">
+                        <div>
+                            <label class="form-label" for="executante4"><strong>Executante 4</strong></label>
+                            <textarea class="form-textbox left-align" id="executante4" placeholder="Digite" wrap="hard"></textarea>
+                        </div>
+                        <div>
+                            <label class="form-label" for="funcao4"><strong>Função</strong></label>
+                            <textarea class="form-textbox left-align" id="funcao4" placeholder="Digite" wrap="hard"></textarea>
+                        </div>
+                        <div class="signature-field" id="signature-trigger4">
+                            <img class="signature-preview" id="signature-preview4" src="" alt="Assinar">
+                        </div>
+                    </div>
+                    
+                    <div class="form-line">
+                        <div>
+                            <label class="form-label" for="executante5"><strong>Executante 5</strong></label>
+                            <textarea class="form-textbox left-align" id="executante5" placeholder="Digite" wrap="hard"></textarea>
+                        </div>
+                        <div>
+                            <label class="form-label" for="funcao5"><strong>Função</strong></label>
+                            <textarea class="form-textbox left-align" id="funcao5" placeholder="Digite" wrap="hard"></textarea>
+                        </div>
+                        <div class="signature-field" id="signature-trigger5">
+                            <img class="signature-preview" id="signature-preview5" src="" alt="Assinar">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Botão de navegação no final da primeira página -->
+            <div class="page-navigation">
+                <button id="page1-next" class="btn btn-primary page-nav-btn">Próxima Página →</button>
+            </div>
+        </section>
+        
+        <section id="section3" style="display: none;">
+            <h2 class="section-title">Edição do Documento</h2>
+            <div class="form-container">
+                <div class="info-section">
+                    <div class="document-title-container">
+                        <button id="implement-btn" class="btn btn-primary">Implementar</button>
+                        <textarea id="document-title" placeholder="Digite título"></textarea>
+                    </div>
+                </div>
+                
+                <div id="add-item-container">
+                    <div class="field-container">
+                        <span>Acrescentar linha</span>
+                        <input type="text" placeholder="Digite etapa" class="small-input-wider" id="add-row-input" maxlength="2">
+                    </div>
+                    <button id="add-row-btn" class="btn btn-primary">+</button>
+                </div>
+                
+                <div id="add-table-container">
+                    <span>Acrescentar tabela</span>
+                    <button id="add-table-btn" class="btn btn-primary">+</button>
+                </div>
+                
+                <div class="info-section">
+                    <div class="alteration-title">Editar tabela</div>
+                    <div class="input-group">
+                        <input type="text" id="table-step" placeholder="Digite a etapa" class="small-input-wider" maxlength="2">
+                        <input type="text" id="table-line" placeholder="Digite a linha" class="small-input-wider" maxlength="2">
+                    </div>
+                    
+                    <div class="edit-fields-container">
+                        <div class="edit-field-group">
+                            <label for="step-description">Descrição da etapa</label>
+                            <textarea id="step-description" placeholder="Descrição da etapa" class="full-width-textarea" rows="3"></textarea>
+                        </div>
+                        
+                        <div class="edit-field-group">
+                            <label for="risk">Risco</label>
+                            <textarea id="risk" placeholder="Risco" class="full-width-textarea" rows="3"></textarea>
+                        </div>
+                        
+                        <div class="edit-field-row">
+                            <div class="edit-field-group medium-field">
+                                <label for="probability">Probabilidade</label>
+                                <input type="text" id="probability" placeholder="Probabilidade">
+                            </div>
+                            
+                            <div class="edit-field-group medium-field">
+                                <label for="severity">Severidade</label>
+                                <input type="text" id="severity" placeholder="Severidade">
+                            </div>
+                            
+                            <div class="edit-field-group medium-field">
+                                <label for="risk-grade">Grau de Risco</label>
+                                <input type="text" id="risk-grade" placeholder="Grau de Risco">
+                            </div>
+                        </div>
+                        
+                        <div class="edit-field-group">
+                            <label for="preventive-measures">Medidas preventivas</label>
+                            <textarea id="preventive-measures" placeholder="Medidas preventivas" class="full-width-textarea" rows="3"></textarea>
+                        </div>
+                        
+                        <div class="edit-field-group">
+                            <label for="epi-description">Descrição EPI</label>
+                            <textarea id="epi-description" placeholder="Descrição EPI" class="full-width-textarea" rows="3"></textarea>
+                        </div>
+                        
+                        <div class="color-buttons">
+                            <label>Código de cores:</label>
+                            <div class="color-btn-container">
+                                <button class="color-btn" data-color="lime" style="background-color: lime;"></button>
+                                <button class="color-btn" data-color="lightblue" style="background-color: lightblue;"></button>
+                                <button class="color-btn" data-color="yellow" style="background-color: yellow;"></button>
+                                <button class="color-btn" data-color="orange" style="background-color: orange;"></button>
+                                <button class="color-btn" data-color="red" style="background-color: red;"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="info-section">
+                    <div class="button-group">
+                        <button id="limpar-btn" class="btn btn-secondary">Limpar</button>
+                        <button id="aplicar-btn" class="btn btn-primary">Aplicar</button>
+                        <button id="desfazer-btn" class="btn btn-secondary">Desfazer</button>
+                    </div>
+                </div>
+                
+                <div class="info-section">
+                    <div class="document-actions">
+                        <button id="save-btn" class="action-btn save-btn">Salvar</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Botão de navegação no final da segunda página -->
+            <div class="page-navigation">
+                <button id="page2-prev" class="btn btn-secondary page-nav-btn">← Página Anterior</button>
+                <button id="page2-next" class="btn btn-primary page-nav-btn">Próxima Página →</button>
+            </div>
+        </section>
+        
+        <section id="section4" style="display: none;">
+            <h2 class="section-title">Histórico das Revisões</h2>
+            <div class="form-container">
+                <table id="revision-history-table" class="flex-table">
+                    <tr class="second-row">
+                        <th style="width: 15%;">Nº</th>
+                        <th style="width: 25%;">Data</th>
+                        <th style="width: 60%;">Descrição das Revisões</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="revision-input number-input" placeholder="Digite"></td>
+                        <td><input type="date" class="revision-input date-input"></td>
+                        <td><input type="text" class="revision-input desc-input" placeholder="Digite a descrição"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="revision-input number-input" placeholder="Digite"></td>
+                        <td><input type="date" class="revision-input date-input"></td>
+                        <td><input type="text" class="revision-input desc-input" placeholder="Digite a descrição"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="revision-input number-input" placeholder="Digite"></td>
+                        <td><input type="date" class="revision-input date-input"></td>
+                        <td><input type="text" class="revision-input desc-input" placeholder="Digite a descrição"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="revision-input number-input" placeholder="Digite"></td>
+                        <td><input type="date" class="revision-input date-input"></td>
+                        <td><input type="text" class="revision-input desc-input" placeholder="Digite a descrição"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="revision-input number-input" placeholder="Digite"></td>
+                        <td><input type="date" class="revision-input date-input"></td>
+                        <td><input type="text" class="revision-input desc-input" placeholder="Digite a descrição"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="revision-input number-input" placeholder="Digite"></td>
+                        <td><input type="date" class="revision-input date-input"></td>
+                        <td><input type="text" class="revision-input desc-input" placeholder="Digite a descrição"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="revision-input number-input" placeholder="Digite"></td>
+                        <td><input type="date" class="revision-input date-input"></td>
+                        <td><input type="text" class="revision-input desc-input" placeholder="Digite a descrição"></td>
+                    </tr>
+                </table>
+                
+                <div class="revision-actions">
+                    <button id="add-revision-btn" class="btn btn-primary">+ Adicionar Revisão</button>
+                    <button id="save-revisions-btn" class="btn btn-success">Salvar Revisões</button>
+                </div>
+            </div>
+            
+            <!-- Botão de navegação no final da terceira página -->
+            <div class="page-navigation">
+                <button id="page3-prev" class="btn btn-secondary page-nav-btn">← Página Anterior</button>
+                <button id="page3-next" class="btn btn-primary page-nav-btn">Próxima Página →</button>
+            </div>
+        </section>
+        
+        <section id="section5" style="display: none;">
+            <h2 class="section-title">Aprovação</h2>
+            <div class="form-container">
+                <div class="form-line">
+                    <div>
+                        <label for="nome-elaborador" class="form-label"><strong>Nome do Elaborador:</strong></label>
+                        <textarea id="nome-elaborador" class="form-textbox left-align" placeholder="Nome completo" wrap="hard"></textarea>
+                    </div>
+                    <div>
+                        <label for="cargo-elaborador" class="form-label"><strong>Cargo:</strong></label>
+                        <textarea id="cargo-elaborador" class="form-textbox left-align" placeholder="Cargo do elaborador" wrap="hard"></textarea>
+                    </div>
+                    <div class="signature-field" id="signature-trigger-elaborador">
+                        <img class="signature-preview" id="signature-preview-elaborador" src="" alt="Assinar">
+                    </div>
+                </div>
+                
+                <div class="form-line">
+                    <div>
+                        <label for="nome-revisor" class="form-label"><strong>Nome do Revisor:</strong></label>
+                        <textarea id="nome-revisor" class="form-textbox left-align" placeholder="Nome completo" wrap="hard"></textarea>
+                    </div>
+                    <div>
+                        <label for="cargo-revisor" class="form-label"><strong>Cargo:</strong></label>
+                        <textarea id="cargo-revisor" class="form-textbox left-align" placeholder="Cargo do revisor" wrap="hard"></textarea>
+                    </div>
+                    <div class="signature-field" id="signature-trigger-revisor">
+                        <img class="signature-preview" id="signature-preview-revisor" src="" alt="Assinar">
+                    </div>
+                </div>
+                
+                <div class="form-line">
+                    <div>
+                        <label for="nome-aprovador" class="form-label"><strong>Nome do Aprovador:</strong></label>
+                        <textarea id="nome-aprovador" class="form-textbox left-align" placeholder="Nome completo" wrap="hard"></textarea>
+                    </div>
+                    <div>
+                        <label for="cargo-aprovador" class="form-label"><strong>Cargo:</strong></label>
+                        <textarea id="cargo-aprovador" class="form-textbox left-align" placeholder="Cargo do aprovador" wrap="hard"></textarea>
+                    </div>
+                    <div class="signature-field" id="signature-trigger-approver">
+                        <img class="signature-preview" id="signature-preview-approver" src="" alt="Assinar">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="data-aprovacao">Data de Aprovação:</label>
+                    <input type="date" id="data-aprovacao" class="editable-field">
+                </div>
+                
+                <div class="form-actions">
+                    <button id="save-form" class="btn btn-success">Salvar APR</button>
+                </div>
+                
+                <!-- Botões finais - apenas na última página -->
+                <div class="final-actions">
+                    <div class="final-buttons">
+                        <button id="print-form" class="btn btn-primary final-btn">📄 Imprimir APR</button>
+                        <button id="download-pdf" class="btn btn-success final-btn">⬇️ Download PDF</button>
+                        <button id="download-word" class="btn btn-info final-btn">📝 Download Word</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Botão de navegação no final da última página -->
+            <div class="page-navigation">
+                <button id="page4-prev" class="btn btn-secondary page-nav-btn">← Página Anterior</button>
+            </div>
+        </section>
+    </main>
+    
+    <button id="to-top" class="to-top">&#9650;</button>
+
+    <!-- Modal de Assinatura -->
+    <div class="overlay" id="overlay"></div>
+    <div class="signature-modal" id="signature-modal">
+        <div class="signature-pad--body">
+            <canvas></canvas>
+        </div>
+        <div class="action-buttons">
+            <button type="button" class="clear" data-action="clear">Limpar</button>
+            <button type="button" class="save" data-action="save">Salvar</button>
+        </div>
+        <div class="message-container">
+            <div class="message">Faça sua assinatura.</div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+    <script src="script.js"></script>
+    <script src="document-editor.js"></script>
+    <script src="approval-signature.js"></script>
+    <script src="print-handler.js"></script>
+    <script src="email-sender.js"></script>
+    <script src="document-title-handler.js"></script>
+    <script src="document-generator.js"></script>
+    <script src="mobile-enhancements.js"></script>
+    
+    <!-- Script de teste para botões -->
+    <script>
+        // Aguardar o DOM estar carregado
+        window.addEventListener('load', function() {
+            console.log("=== TESTE DOS BOTÕES ===");
+            
+            // Função para adicionar event listeners manualmente
+            function setupButtonListeners() {
+                // Botões de navegação
+                const pageButtons = [
+                    { id: 'page1-next', action: () => { console.log('page1-next clicado'); showPage(1); } },
+                    { id: 'page2-prev', action: () => { console.log('page2-prev clicado'); showPage(0); } },
+                    { id: 'page2-next', action: () => { console.log('page2-next clicado'); showPage(2); } },
+                    { id: 'page3-prev', action: () => { console.log('page3-prev clicado'); showPage(1); } },
+                    { id: 'page3-next', action: () => { console.log('page3-next clicado'); showPage(3); } },
+                    { id: 'page4-prev', action: () => { console.log('page4-prev clicado'); showPage(2); } },
+                    { id: 'download-pdf', action: () => { console.log('download-pdf clicado'); generatePDF(); } },
+                    { id: 'download-word', action: () => { console.log('download-word clicado'); generateWord(); } },
+                    { id: 'print-form', action: () => { console.log('print-form clicado'); generatePDF(); } }
+                ];
+                
+                pageButtons.forEach(btnConfig => {
+                    const btn = document.getElementById(btnConfig.id);
+                    if (btn) {
+                        console.log(`✅ Configurando ${btnConfig.id}`);
+                        btn.addEventListener('click', btnConfig.action);
+                        // Adicionar indicador visual
+                        btn.style.border = '2px solid green';
+                    } else {
+                        console.log(`❌ Botão ${btnConfig.id} não encontrado`);
+                    }
+                });
+            }
+            
+            // Configurar botões
+            setTimeout(setupButtonListeners, 1000);
+            
+            // Função global para testar
+            window.testButtonsManual = function() {
+                const btn = document.getElementById('page1-next');
+                if (btn) {
+                    btn.click();
+                    console.log('Botão page1-next testado manualmente');
+                } else {
+                    console.log('Botão page1-next não encontrado para teste');
+                }
+            };
+            
+            // Função para testar captura de dados
+            window.testDataCapture = function() {
+                console.log("=== TESTE DE CAPTURA DE DADOS ===");
+                
+                // Testar inputs
+                const inputs = document.querySelectorAll('#section1 input, #section1 textarea');
+                console.log(`Encontrados ${inputs.length} campos de input`);
+                inputs.forEach((input, index) => {
+                    const value = input.value || '';
+                    const checked = input.type === 'checkbox' ? input.checked : 'N/A';
+                    console.log(`Campo ${index}: ID="${input.id}", Tipo="${input.type}", Valor="${value}", Marcado=${checked}`);
+                });
+                
+                // Testar editáveis
+                const editables = document.querySelectorAll('#section1 [contenteditable="true"]');
+                console.log(`Encontrados ${editables.length} campos editáveis`);
+                editables.forEach((editable, index) => {
+                    const content = editable.textContent || '';
+                    console.log(`Editável ${index}: "${content.substring(0, 100)}..."`);
+                });
+                
+                // Testar assinaturas
+                const signatures = document.querySelectorAll('#section1 .signature-preview');
+                console.log(`Encontradas ${signatures.length} áreas de assinatura`);
+                signatures.forEach((sig, index) => {
+                    const hasSignature = sig.src && sig.src !== '' && !sig.src.includes('data:,');
+                    console.log(`Assinatura ${index}: ${hasSignature ? 'PRESENTE' : 'AUSENTE'}`);
+                    if (hasSignature) {
+                        console.log(`  Tamanho: ${sig.src.length} chars`);
+                        console.log(`  Preview: ${sig.src.substring(0, 100)}...`);
+                    }
+                });
+                
+                console.log("=================================");
+                return true;
+            };
+            
+            console.log("Para testar manualmente, digite: testButtonsManual()");
+            console.log("Para testar captura de dados, digite: testDataCapture()");
+        });
+    </script>
+</body>
+</html>

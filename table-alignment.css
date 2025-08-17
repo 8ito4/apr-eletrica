@@ -1,0 +1,131 @@
+/* Centralize content in risk assessment columns (P, S, R) */
+.flex-table td:nth-child(3),
+.flex-table td:nth-child(4),
+.flex-table td:nth-child(5) {
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Ensure editable cells in these columns maintain centering when edited */
+.flex-table td.editable-cell:nth-child(3),
+.flex-table td.editable-cell:nth-child(4),
+.flex-table td.editable-cell:nth-child(5) {
+    text-align: center;
+}
+
+/* Left-align all cells under the "Medidas preventivas" subtitle */
+.flex-table td:nth-child(6),
+.flex-table td:nth-child(7) {
+    text-align: left;
+}
+
+/* Also ensure that when these cells are being edited, they maintain left alignment */
+.flex-table td.editable-cell[contenteditable="true"]:nth-child(6),
+.flex-table td.editable-cell[contenteditable="true"]:nth-child(7) {
+    text-align: left;
+    text-align-last: left;
+}
+
+/* Make the second row subtitles bold */
+.flex-table .second-row td {
+    font-weight: bold;
+}
+
+/* Make table titles have the same font size as EPI text but bold */
+.flex-table .table-title {
+    font-size: inherit;
+    font-weight: bold;
+}
+
+/* Refine table spacing to ensure zero margin between tables */
+.risk-table-container {
+    margin-bottom: 0;
+}
+
+.flex-table {
+    margin-bottom: 0;
+}
+
+/* Make table cells expand vertically with text wrap */
+.flex-table td.editable-cell {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    vertical-align: top;
+    min-height: 30px;
+    height: auto;
+}
+
+/* Make sure cell content doesn't overflow horizontally */
+.flex-table td.editable-cell[contenteditable="true"] {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-width: 1px; /* Trick to force text wrapping */
+}
+
+/* Ensure proper column sizing while maintaining wrapping */
+.flex-table td[colspan="2"] {
+    width: 25%;
+}
+
+.flex-table td:not([colspan]) {
+    width: 8%;
+}
+
+.flex-table td[colspan="7"] {
+    width: 100%;
+}
+
+/* Melhorias de responsividade para tabelas mobile */
+@media (max-width: 480px) {
+    .flex-table td.editable-cell {
+        min-height: 35px; /* Área de toque maior para mobile */
+        padding: 8px 4px !important;
+    }
+    
+    .flex-table td.editable-cell[contenteditable="true"] {
+        background-color: #f0f8ff;
+        border: 2px solid #007bff;
+    }
+    
+    /* Melhor visibilidade das bordas em mobile */
+    .flex-table td {
+        border-width: 1px !important;
+        border-style: solid !important;
+        border-color: #333 !important;
+    }
+    
+    /* Ajustes para cabeçalhos em mobile */
+    .flex-table .second-row td {
+        font-weight: bold;
+        background-color: #f8f9fa;
+        font-size: 12px !important;
+    }
+    
+    /* Melhor contraste para leitura em mobile */
+    .flex-table tr:nth-child(odd) td {
+        background-color: #ffffff;
+    }
+    
+    .flex-table tr:nth-child(even) td {
+        background-color: #f8f9fa;
+    }
+}
+
+@media (max-width: 480px) and (orientation: landscape) {
+    .flex-table td.editable-cell {
+        min-height: 30px;
+        padding: 6px 3px !important;
+    }
+}
+
+/* Melhorias para tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+    .flex-table td.editable-cell {
+        min-height: 32px;
+        padding: 7px 4px !important;
+    }
+    
+    .flex-table {
+        font-size: 12px;
+    }
+}

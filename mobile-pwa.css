@@ -1,0 +1,361 @@
+/**
+ * PWA e Mobile Advanced Styles
+ * Estilos avançados para aplicação móvel e PWA
+ */
+
+/* Classes adicionadas via JavaScript para detecção de dispositivo */
+.mobile-device {
+    -webkit-tap-highlight-color: rgba(0,0,0,0.1);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.touch-device .editable-cell,
+.touch-device .editable-field {
+    -webkit-user-select: text;
+    user-select: text;
+}
+
+/* Melhorias de performance para mobile */
+.mobile-device * {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* Smooth scrolling otimizado para mobile */
+.mobile-device {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Overlay para indicar área de toque ativa */
+.touch-feedback {
+    position: relative;
+    overflow: hidden;
+}
+
+.touch-feedback::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(0, 123, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.touch-feedback:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Estilos para orientação específica */
+@media screen and (orientation: portrait) and (max-width: 480px) {
+    .portrait-only {
+        display: block !important;
+    }
+    
+    .landscape-only {
+        display: none !important;
+    }
+    
+    /* Otimizações específicas para portrait */
+    .flex-table {
+        font-size: 11px !important;
+    }
+    
+    .header-table {
+        font-size: 10px !important;
+    }
+    
+    .signature-modal {
+        height: auto;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+}
+
+@media screen and (orientation: landscape) and (max-height: 500px) {
+    .portrait-only {
+        display: none !important;
+    }
+    
+    .landscape-only {
+        display: block !important;
+    }
+    
+    /* Otimizações específicas para landscape */
+    header {
+        min-height: 40px;
+        padding: 5px 10px;
+    }
+    
+    main {
+        padding-top: 50px;
+    }
+    
+    .signature-modal {
+        width: 80%;
+        max-width: 600px;
+    }
+    
+    .signature-pad--body canvas {
+        height: 100px !important;
+    }
+}
+
+/* Estilos específicos para PWA */
+@media (display-mode: standalone) {
+    /* Quando rodando como PWA */
+    body {
+        margin-top: env(safe-area-inset-top);
+        margin-bottom: env(safe-area-inset-bottom);
+        margin-left: env(safe-area-inset-left);
+        margin-right: env(safe-area-inset-right);
+    }
+    
+    header {
+        padding-top: calc(10px + env(safe-area-inset-top));
+    }
+    
+    .sidebar {
+        padding-top: calc(60px + env(safe-area-inset-top));
+    }
+}
+
+/* Melhorias para telas muito pequenas (menos de 320px) */
+@media (max-width: 320px) {
+    .header-title {
+        font-size: 14px !important;
+    }
+    
+    .nav-buttons {
+        padding: 2px 6px;
+    }
+    
+    .nav-buttons button {
+        font-size: 16px;
+    }
+    
+    #page-indicator {
+        font-size: 11px;
+    }
+    
+    .flex-table {
+        font-size: 9px !important;
+    }
+    
+    .flex-table td {
+        padding: 4px 2px !important;
+    }
+    
+    .input-field, .editable-field {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/* Estilos para telas grandes de mobile (6+ polegadas) */
+@media (min-width: 400px) and (max-width: 480px) {
+    .flex-table {
+        font-size: 12px !important;
+    }
+    
+    .header-table {
+        font-size: 12px !important;
+    }
+    
+    .input-field, .editable-field {
+        font-size: 16px;
+    }
+}
+
+/* Melhorias para acessibilidade em mobile */
+@media (max-width: 768px) {
+    /* Aumentar contraste para melhor visibilidade */
+    .flex-table td {
+        border-color: #000 !important;
+        border-width: 1px !important;
+    }
+    
+    /* Melhorar feedback visual para elementos focados */
+    .editable-cell:focus,
+    .editable-field:focus,
+    input:focus,
+    textarea:focus,
+    button:focus {
+        outline: 3px solid #007bff !important;
+        outline-offset: 2px;
+        box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.25);
+    }
+    
+    /* Melhorar visibilidade de botões */
+    .btn, .action-btn, button {
+        border: 2px solid transparent;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .btn:hover, .action-btn:hover, button:hover {
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        transform: translateY(-1px);
+    }
+}
+
+/* Animações otimizadas para mobile */
+@media (max-width: 768px) {
+    * {
+        transition-duration: 0.2s !important;
+    }
+    
+    .sidebar {
+        transition: left 0.25s ease-out;
+    }
+    
+    .signature-modal {
+        transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+    }
+    
+    .signature-modal.show {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    
+    .signature-modal.hide {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+}
+
+/* Estilos para modo escuro (se suportado pelo dispositivo) */
+@media (prefers-color-scheme: dark) and (max-width: 768px) {
+    .mobile-device {
+        background-color: #1a1a1a;
+        color: #ffffff;
+    }
+    
+    .mobile-device .form-container {
+        background-color: #2d2d2d;
+        color: #ffffff;
+    }
+    
+    .mobile-device .flex-table td {
+        background-color: #2d2d2d;
+        color: #ffffff;
+    }
+    
+    .mobile-device .header-table {
+        background-color: #2d2d2d;
+        color: #ffffff;
+    }
+    
+    .mobile-device input,
+    .mobile-device textarea {
+        background-color: #3d3d3d;
+        color: #ffffff;
+        border-color: #555;
+    }
+}
+
+/* Otimizações para economizar bateria em mobile */
+@media (max-width: 768px) {
+    /* Reduzir animações para economizar bateria */
+    @media (prefers-reduced-motion: reduce) {
+        * {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
+    
+    /* Otimizar renderização */
+    .flex-table {
+        contain: layout style paint;
+    }
+    
+    .signature-modal {
+        contain: layout style;
+    }
+}
+
+/* Melhorias para dispositivos com notch */
+@supports (padding: max(0px)) {
+    .mobile-device header {
+        padding-left: max(10px, env(safe-area-inset-left));
+        padding-right: max(10px, env(safe-area-inset-right));
+    }
+    
+    .mobile-device main {
+        padding-left: max(10px, env(safe-area-inset-left));
+        padding-right: max(10px, env(safe-area-inset-right));
+    }
+    
+    .mobile-device .sidebar {
+        padding-left: max(0px, env(safe-area-inset-left));
+    }
+}
+
+/* Estilos para impressão em mobile */
+@media print and (max-width: 768px) {
+    * {
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+    
+    .flex-table {
+        font-size: 8px !important;
+        page-break-inside: avoid;
+    }
+    
+    .flex-table td {
+        padding: 1px !important;
+        border: 0.5px solid #000 !important;
+    }
+    
+    .header-table {
+        font-size: 9px !important;
+        page-break-inside: avoid;
+    }
+    
+    /* Forçar quebra de página em elementos específicos */
+    .risk-table-container {
+        page-break-inside: avoid;
+        page-break-after: auto;
+    }
+}
+
+/* Loading states otimizados para mobile */
+.mobile-loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.mobile-loading::after {
+    content: '';
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #130F76;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+} 
